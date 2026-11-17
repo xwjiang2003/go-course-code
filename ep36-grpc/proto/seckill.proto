@@ -1,0 +1,47 @@
+syntax = "proto3";
+
+package seckill;
+
+option go_package = "seckill/gen/seckillpb;seckillpb";
+
+message DeductReq {
+  string sku_id = 1;
+  string order_id = 2;
+  int32 count = 3;
+}
+
+message DeductResp {
+  bool ok = 1;
+  int32 remain = 2;
+}
+
+message CreateReq {
+  string sku_id = 1;
+  string order_id = 2;
+  string user_id = 3;
+}
+
+message CreateResp {
+  string order_id = 1;
+  string status = 2;
+}
+
+message QueueReq {
+  string order_id = 1;
+}
+
+message QueueEvent {
+  string order_id = 1;
+  int32 position = 2;
+  int32 eta_ms = 3;
+  string status = 4;
+}
+
+service Inventory {
+  rpc Deduct(DeductReq) returns (DeductResp);
+}
+
+service Order {
+  rpc Create(CreateReq) returns (CreateResp);
+  rpc QueueProgress(QueueReq) returns (stream QueueEvent);
+}

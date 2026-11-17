@@ -1,0 +1,26 @@
+# 可执行文件
+*.exe
+*.test
+*.out
+
+# Go 工作区
+go.work
+go.work.sum
+
+# 依赖与构建产物
+vendor/
+bin/
+dist/
+
+# 编辑器
+.idea/
+.vscode/
+*.swp
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 日志与临时文件
+*.log
+tmp/
