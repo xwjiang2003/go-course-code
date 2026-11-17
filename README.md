@@ -1,5 +1,8 @@
 # 《Go 语言从入门到精通》示例源码
 
+Gitee：https://gitee.com/jxw1111/go-course-code
+GitHub：https://github.com/xwjiang2003/go-course-code
+
 配合 B 站课程视频使用的示例代码，按集数分目录管理。所有代码都在本机 `go build` / `go vet` 验证过，标了「可运行」的能直接 `go run` 出结果。
 
 ## 目录
